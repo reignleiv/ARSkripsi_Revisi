@@ -69,10 +69,11 @@ class ARFragment : Fragment() {
             modelNode = ArModelNode(sceneView.engine, PlacementMode.INSTANT).apply {
                 loadModelGlbAsync(
                     glbFileLocation = glbLocation,
-                    scaleToUnits = 0.7f,
+                    scaleToUnits = 1f,
                     centerOrigin = Position(-0.5f)
                 ) {
                     sceneView.planeRenderer.isVisible = false
+                    Log.d(TAG, "Model loaded successfully")
                 }
                 onAnchorChanged = {
                     binding.place.isGone = it != null
