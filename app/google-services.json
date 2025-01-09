@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "979904604356",
+    "firebase_url": "https://thesis-project-4a56a-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "thesis-project-4a56a",
+    "storage_bucket": "thesis-project-4a56a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979904604356:android:67442db1f27bdcd00c0191",
+        "android_client_info": {
+          "package_name": "com.example.arskripsi_revisi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979904604356-3rqt9ic7usg49ncidp9pegemdaos6u42.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9EBXIadc8mZ8-Wgv4y8F0FNP-QkUq6L4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979904604356-3rqt9ic7usg49ncidp9pegemdaos6u42.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
