@@ -22,12 +22,16 @@ class DetailFragment : Fragment() {
     ): View? {
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         homeViewModel.getSelectedBarang.observe(viewLifecycleOwner) { barang ->
             barang?.let {
-                binding.selectedBarang.text = it.name ?: "Error"
+                binding.selectedBarang.text = "Nama: ${it.name ?: "Error"}"
+                binding.selectedBarangDeskripsi.text = "Deskripsi: ${it.deskripsi ?: "Error"}"
+                binding.selectedBarangPrice.text = "Price: Rp.${it.price.toString() ?: "Error"}"
+                binding.selectedBarangStock.text = "Stock: ${it.stock.toString() ?: "Error"}"
             }
         }
 

@@ -37,21 +37,21 @@ class ARFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        homeViewModel.getSelectedBarang.observe(viewLifecycleOwner) { barang ->
-            barang?.model.let {
-//                binding.selectedBarang.text = it.fileName ?: "Error"
-
-                val model = decodeBase64ToFile(requireContext(), it?.content!!,it?.filename!!)
-
-                if (model != null) {
-                    Log.d(TAG, "onViewCreated: ${model.absolutePath}")
-                    loadModel(model.absolutePath)
-                }
-            }
-        }
-    }
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        homeViewModel.getSelectedBarang.observe(viewLifecycleOwner) { barang ->
+//            barang?.model.let {
+////                binding.selectedBarang.text = it.fileName ?: "Error"
+//
+//                val model = decodeBase64ToFile(requireContext(), it?.content!!,it?.filename!!)
+//
+//                if (model != null) {
+//                    Log.d(TAG, "onViewCreated: ${model.absolutePath}")
+//                    loadModel(model.absolutePath)
+//                }
+//            }
+//        }
+//    }
 
     private fun loadModel(glbLocation: String){
         try {
