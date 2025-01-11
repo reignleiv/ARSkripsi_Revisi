@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialize Firebase Auth
         auth = Firebase.auth
 
         val navView: BottomNavigationView = binding.navView

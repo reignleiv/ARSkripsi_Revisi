@@ -1,5 +1,4 @@
 package com.example.arskripsi_revisi.ui.ar
-
 import android.content.Context
 import android.os.Bundle
 import android.util.Base64
@@ -33,25 +32,18 @@ class ARFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return binding.root
     }
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//        homeViewModel.getSelectedBarang.observe(viewLifecycleOwner) { barang ->
-//            barang?.model.let {
-////                binding.selectedBarang.text = it.fileName ?: "Error"
-//
-//                val model = decodeBase64ToFile(requireContext(), it?.content!!,it?.filename!!)
-//
-//                if (model != null) {
-//                    Log.d(TAG, "onViewCreated: ${model.absolutePath}")
-//                    loadModel(model.absolutePath)
-//                }
-//            }
-//        }
-//    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        homeViewModel.getSelectedBarang.observe(viewLifecycleOwner) { barang ->
+            val name = barang.name
+            val modelPath = barang.model
+
+            sceneView = binding.sceneView
+        }
+    }
 
     private fun loadModel(glbLocation: String){
         try {
@@ -63,12 +55,12 @@ class ARFragment : Fragment() {
                 placeModel()
             }
 
-//            val modelLocation = intent.getStringExtra("MODEL_LOCATION") ?: "assets/models/meja.glb"
-//            Log.d("LihatARbang", "Model location: $modelLocation")
-
             modelNode = ArModelNode(sceneView.engine, PlacementMode.INSTANT).apply {
+                val glbUrl: String = "https://arskripsi.irnhakim.com/storage/models/{filename}"
+                Log.d(TAG, "Model URL: $glbUrl")
+
                 loadModelGlbAsync(
-                    glbFileLocation = glbLocation,
+                    glbFileLocation = glbUrl,
                     scaleToUnits = 1f,
                     centerOrigin = Position(-0.5f)
                 ) {
@@ -78,16 +70,18 @@ class ARFragment : Fragment() {
                 onAnchorChanged = {
                     binding.place.isGone = it != null
                 }
-                // Disable scaling and zooming
                 isScaleEditable = false
                 isRotationEditable = false
-                isSelectable=false
+                isSelectable = false
             }
+            Log.d("CheckModelNode", modelNode.toString())
             sceneView.addChild(modelNode)
         } catch (e: Exception) {
             Log.e("LihatAR", "Error initializing AR", e)
+
         }
     }
+
     private fun placeModel() {
         try {
             modelNode.anchor()
@@ -97,26 +91,6 @@ class ARFragment : Fragment() {
         }
     }
 
-    fun decodeBase64ToFile(context: Context, base64String: String, fileName: String): File? {
-        val decodedBytes: ByteArray?
-        try {
-            decodedBytes = Base64.decode(base64String, android.util.Base64.DEFAULT)
-        } catch (e: IllegalArgumentException) {
-            e.printStackTrace()
-            return null
-        }
-
-        val glbFile = File(context.cacheDir, fileName)
-        try {
-            val fos = FileOutputStream(glbFile)
-            fos.write(decodedBytes)
-            fos.close()
-            return glbFile
-        } catch (e: IOException) {
-            e.printStackTrace()
-            return null
-        }
-    }
     companion object {
         private const val TAG = "ARFragment"
     }
