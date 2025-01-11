@@ -56,7 +56,7 @@ class ARFragment : Fragment() {
             }
 
             modelNode = ArModelNode(sceneView.engine, PlacementMode.INSTANT).apply {
-                val glbUrl: String = "https://arskripsi.irnhakim.com/storage/models/{filename}"
+                val glbUrl: String = "https://arskripsi.irnhakim.com/public/models/{filename}"
                 Log.d(TAG, "Model URL: $glbUrl")
 
                 loadModelGlbAsync(
