@@ -60,6 +60,8 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-auth")
     implementation ("com.google.firebase:firebase-database-ktx:21.0.0")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
     implementation("io.github.sceneview:arsceneview:0.10.0")
     implementation("com.google.ar:core:1.28.0")
