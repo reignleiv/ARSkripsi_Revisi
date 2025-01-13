@@ -1,7 +1,5 @@
 package com.example.arskripsi_revisi.ui.ar
-import android.content.Context
 import android.os.Bundle
-import android.util.Base64
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,10 +14,6 @@ import io.github.sceneview.ar.ArSceneView
 import io.github.sceneview.ar.node.ArModelNode
 import io.github.sceneview.ar.node.PlacementMode
 import io.github.sceneview.math.Position
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
-import kotlin.concurrent.write
 
 class ARFragment : Fragment() {
     private val binding : FragmentARBinding by lazy { FragmentARBinding.inflate(layoutInflater) }
