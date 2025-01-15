@@ -63,7 +63,7 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
-    implementation("io.github.sceneview:arsceneview:0.10.0")
+    implementation ("io.github.sceneview:arsceneview:0.9.8")
     implementation("com.google.ar:core:1.28.0")
 
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")

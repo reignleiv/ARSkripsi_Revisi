@@ -10,10 +10,13 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation.findNavController
 import com.example.arskripsi_revisi.R
 import com.example.arskripsi_revisi.databinding.FragmentDetailBinding
-import com.example.arskripsi_revisi.helpers.Model
 import com.example.arskripsi_revisi.ui.home.HomeViewModel
 import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.net.HttpURLConnection
+import java.net.URL
 
 
 class DetailFragment : Fragment() {
@@ -42,19 +45,31 @@ class DetailFragment : Fragment() {
 
         binding.btnLihatAr.setOnClickListener{
             homeViewModel.getSelectedBarang.value?.model?.let { modelName ->
-                val model = Model(modelName)
+                val url = "https://arskripsi.irnhakim.com/public/$modelName"
 
                 lifecycleScope.launch {
-                    val downloadedFile = model.download(requireContext())
-                    if (downloadedFile != null) {
-                        println("Downloaded file path: ${downloadedFile.absolutePath}")
+                    if (isUrlValid(url)) {
                         findNavController(view).navigate(R.id.action_detailFragment_to_ARFragment)
                     } else {
-                        Toast.makeText(requireContext(), "Failed to download the model", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Invalid model link", Toast.LENGTH_SHORT).show()
                     }
                 }
             } ?: run {
                 Toast.makeText(requireContext(), "Model not found", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    suspend fun isUrlValid(url: String): Boolean {
+        return withContext(Dispatchers.IO) {
+            try {
+                val connection = URL(url).openConnection() as HttpURLConnection
+                connection.requestMethod = "HEAD"
+                connection.connectTimeout = 5000
+                connection.responseCode == HttpURLConnection.HTTP_OK
+            } catch (e: Exception) {
+                e.printStackTrace()
+                false
             }
         }
     }
