@@ -24,7 +24,7 @@ class ARFragment : Fragment() {
     private lateinit var sceneView: ArSceneView
     private lateinit var modelNode: ArModelNode
 
-    private val BASE_URL = "https://arskripsi.irnhakim.com/public/"
+    private val BASE_URL = "https://arskripsi.irnhakim.com/public/models/"
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
