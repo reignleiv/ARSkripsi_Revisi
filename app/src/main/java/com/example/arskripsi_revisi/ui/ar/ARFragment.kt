@@ -11,7 +11,7 @@ import com.example.arskripsi_revisi.databinding.FragmentARBinding
 import com.example.arskripsi_revisi.helpers.StringHelper
 import com.example.arskripsi_revisi.ui.home.HomeViewModel
 import io.github.sceneview.ar.ArSceneView
-import io.github.sceneview.ar.arcore.LightEstimationMode
+
 import io.github.sceneview.ar.node.ArModelNode
 import io.github.sceneview.ar.node.PlacementMode
 import io.github.sceneview.math.Position
@@ -30,9 +30,7 @@ class ARFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentARBinding.inflate(inflater, container, false)
-
         sceneView = binding.sceneView
-
         return binding.root
     }
 
@@ -56,7 +54,7 @@ class ARFragment : Fragment() {
                 placeModel()
             }
 
-            modelNode = ArModelNode().apply {
+            modelNode = ArModelNode(sceneView.engine).apply {
                 val glbPath = BASE_URL + fileName
                 Log.d(TAG, "Model URL: $glbPath")
 
@@ -79,7 +77,6 @@ class ARFragment : Fragment() {
             sceneView.addChild(modelNode)
         } catch (e: Exception) {
             Log.e(TAG, "Error initializing AR", e)
-
         }
     }
 
