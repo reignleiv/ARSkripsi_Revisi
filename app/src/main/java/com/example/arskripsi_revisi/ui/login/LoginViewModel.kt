@@ -1,13 +1,12 @@
 package com.example.arskripsi_revisi.ui.login
 
+import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import android.util.Patterns
+import com.example.arskripsi_revisi.R
 import com.example.arskripsi_revisi.data.LoginRepository
 import com.example.arskripsi_revisi.data.Result
-
-import com.example.arskripsi_revisi.R
 
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
 

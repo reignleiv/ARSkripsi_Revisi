@@ -5,11 +5,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.arskripsi_revisi.R
@@ -24,7 +21,7 @@ import com.google.firebase.ktx.Firebase
 
 class HomeFragment : Fragment(), ModelAdapter.OnItemClickListener {
 
-    private val binding :  FragmentHomeBinding by lazy { FragmentHomeBinding.inflate(layoutInflater) }
+    private val binding: FragmentHomeBinding by lazy { FragmentHomeBinding.inflate(layoutInflater) }
     private lateinit var adapter: ModelAdapter
     private val homeViewModel: HomeViewModel by activityViewModels()
     override fun onCreateView(
@@ -44,7 +41,7 @@ class HomeFragment : Fragment(), ModelAdapter.OnItemClickListener {
         val database = Firebase.database
         val myRef = database.getReference("barang")
 
-        myRef.addValueEventListener(object : ValueEventListener{
+        myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 val barangList = mutableListOf<Barang>()
@@ -67,7 +64,7 @@ class HomeFragment : Fragment(), ModelAdapter.OnItemClickListener {
 
     }
 
-    companion object{
+    companion object {
         private const val TAG = "HomeFragment"
     }
 

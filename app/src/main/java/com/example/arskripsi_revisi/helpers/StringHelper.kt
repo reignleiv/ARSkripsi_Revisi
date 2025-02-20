@@ -8,7 +8,10 @@ abstract class StringHelper {
         fun getUrlSafeName(name: String): String {
             val prefix = "models/"
             return if (name.startsWith(prefix)) {
-                prefix + URLEncoder.encode(name.substring(prefix.length), StandardCharsets.UTF_8.toString())
+                prefix + URLEncoder.encode(
+                    name.substring(prefix.length),
+                    StandardCharsets.UTF_8.toString()
+                )
                     .replace("+", "%20")
             } else {
                 URLEncoder.encode(name, StandardCharsets.UTF_8.toString())

@@ -1,10 +1,8 @@
 package com.example.arskripsi_revisi.data.adapter
 
-import android.graphics.ColorSpace
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +12,8 @@ import com.example.arskripsi_revisi.data.model.Barang
 
 class ModelAdapter(
     private val modelList: List<Barang>,
-    private val listener: OnItemClickListener) : RecyclerView.Adapter<ModelAdapter.ModelViewHolder>() {
+    private val listener: OnItemClickListener
+) : RecyclerView.Adapter<ModelAdapter.ModelViewHolder>() {
 
     interface OnItemClickListener {
         fun onItemClick(barang: Barang)

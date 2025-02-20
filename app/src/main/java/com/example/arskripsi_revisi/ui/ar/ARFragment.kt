@@ -1,19 +1,18 @@
 package com.example.arskripsi_revisi.ui.ar
+
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isGone
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.arskripsi_revisi.databinding.FragmentARBinding
 import com.example.arskripsi_revisi.helpers.StringHelper
 import com.example.arskripsi_revisi.ui.home.HomeViewModel
 import io.github.sceneview.ar.ArSceneView
-
 import io.github.sceneview.ar.node.ArModelNode
-import io.github.sceneview.ar.node.PlacementMode
 import io.github.sceneview.math.Position
 
 class ARFragment : Fragment() {
@@ -28,7 +27,7 @@ class ARFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentARBinding.inflate(inflater, container, false)
         sceneView = binding.sceneView
         return binding.root
@@ -43,8 +42,8 @@ class ARFragment : Fragment() {
         }
     }
 
-    private fun loadModel(fileName: String){
-        Log.d(TAG,"Start")
+    private fun loadModel(fileName: String) {
+        Log.d(TAG, "Start")
         try {
 //            binding.sceneView.apply {
 //                this.lightEstimationMode = LightEstimationMode.ENVIRONMENTAL_HDR_NO_REFLECTIONS

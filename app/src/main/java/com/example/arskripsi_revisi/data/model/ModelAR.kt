@@ -1,7 +1,5 @@
 package com.example.arskripsi_revisi.data.model
 
-import java.net.URL
-
 data class Barang(
     val model: String?,
     val name: String?,
@@ -10,7 +8,7 @@ data class Barang(
     val deskripsi: String?,
     val thumbnail: String?,
     val url: String?
-){
+) {
     constructor() : this(null, null, null, null, null, null, null)
 }
 //
