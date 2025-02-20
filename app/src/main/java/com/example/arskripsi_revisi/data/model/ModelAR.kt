@@ -8,8 +8,10 @@ data class Barang(
     val price: String?,
     val stock: String?,
     val deskripsi: String?,
+    val thumbnail: String?,
+    val url: String?
 ){
-    constructor() : this(null, null, null, null, null)
+    constructor() : this(null, null, null, null, null, null, null)
 }
 //
 //data class Model(

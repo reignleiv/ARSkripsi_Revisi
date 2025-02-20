@@ -39,7 +39,7 @@ class HomeFragment : Fragment(), ModelAdapter.OnItemClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recyclerview.layoutManager = GridLayoutManager(context, 3)
+        binding.recyclerview.layoutManager = GridLayoutManager(context, 2)
 
         val database = Firebase.database
         val myRef = database.getReference("barang")

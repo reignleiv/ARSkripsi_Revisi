@@ -6,12 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".ui.detail.DetailFragment">
 
+    <ImageView
+        android:id="@+id/productImageView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:maxHeight="200dp"
+        android:background="@color/light_grey"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <TextView
         android:id="@+id/selected_barang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -68,11 +81,11 @@
         />
 
     <Button
-        android:id="@+id/tambah_keranjang"
+        android:id="@+id/go_to_marketplace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Tambah Ke  Keranjang"
+        android:text="Lihat di Marketplace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
