@@ -46,7 +46,7 @@ class DetailFragment : Fragment() {
                 binding.selectedBarang.text = "Nama: ${it.name ?: "Error"}"
                 binding.selectedBarangDeskripsi.text = "Deskripsi: ${it.deskripsi ?: "Error"}"
                 binding.selectedBarangPrice.text = "Price: Rp.${it.price.toString()}"
-                binding.selectedBarangSize.text = "Ukuran (p x l x t): ${it.long.toString()} x ${it.width.toString()} x ${it.height.toString()}"
+                binding.selectedBarangSize.text = "Ukuran (P x L x T): ${it.long.toString()} x ${it.width.toString()} x ${it.height.toString()}"
                 val thumbnailUrl = "https://arskripsi.irnhakim.com/public/storage/${it.thumbnail}"
 
                 Glide.with(binding.productImageView.context)
