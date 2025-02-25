@@ -33,7 +33,9 @@ class ModelAdapter(
         val barang = modelList[position]
         holder.nameTextView.text = barang.name
         holder.priceTextView.text = "${barang.price}"
-        holder.stockTextView.text = "${barang.stock}"
+        holder.panjangTextView.text = "${barang.long}"
+        holder.tinggiTextView.text = "${barang.height}"
+        holder.lebarTextView.text = "${barang.width}"
         val thumbnailUrl = "https://arskripsi.irnhakim.com/public/storage/${barang.thumbnail}"
 
         Glide.with(holder.thumbnailImageView.context)
@@ -48,7 +50,9 @@ class ModelAdapter(
         val thumbnailImageView: ImageView = itemView.findViewById(R.id.thumbnailView)
         val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
         val priceTextView: TextView = itemView.findViewById(R.id.priceTextView)
-        val stockTextView: TextView = itemView.findViewById(R.id.stockTextView)
+        val panjangTextView: TextView = itemView.findViewById(R.id.panjangTextView)
+        val tinggiTextView: TextView = itemView.findViewById(R.id.tinggiTextView)
+        val lebarTextView: TextView = itemView.findViewById(R.id.lebarTextView)
         val container: View = itemView.findViewById(R.id.container)
 
         fun bind(barang: Barang, listener: OnItemClickListener) {

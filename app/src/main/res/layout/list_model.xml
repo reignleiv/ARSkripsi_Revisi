@@ -10,13 +10,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:elevation="4dp"
         app:cardCornerRadius="8dp"
-        android:padding="8dp">
+        app:cardElevation="4dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:padding="8dp"
             android:gravity="center_vertical">
 
             <!-- Gambar di sebelah kiri -->
@@ -25,13 +26,15 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:src="@drawable/placeholder_200"
-                />
+                android:layout_marginBottom="8dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_weight="1"
                 android:padding="3dp">
+
                 <TextView
                     android:id="@+id/nameTextView"
                     android:layout_width="match_parent"
@@ -43,6 +46,22 @@
                     android:ellipsize="end"
                     android:maxLines="1" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Harga: "
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/priceTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -52,34 +71,51 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:text="Harga : "
+                        android:text="Panjang: "
                         android:textSize="16sp"/>
-
                     <TextView
-                        android:id="@+id/priceTextView"
+                        android:id="@+id/panjangTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:text="Stock : "
+                        android:text="Lebar: "
                         android:textSize="16sp"/>
                     <TextView
-                        android:id="@+id/stockTextView"
+                        android:id="@+id/lebarTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp" />
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Tinggi: "
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:id="@+id/tinggiTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp" />
+                </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
 </LinearLayout>

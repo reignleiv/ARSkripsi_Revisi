@@ -56,7 +56,7 @@
         />
 
     <TextView
-        android:id="@+id/selected_barang_stock"
+        android:id="@+id/selected_barang_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Lihat AR"
-        app:layout_constraintTop_toBottomOf="@id/selected_barang_stock"
+        app:layout_constraintTop_toBottomOf="@id/selected_barang_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -90,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/selected_barang_stock"
+        app:layout_constraintTop_toBottomOf="@id/selected_barang_size"
         app:layout_constraintVertical_bias="0.702" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
