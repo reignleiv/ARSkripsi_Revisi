@@ -57,10 +57,10 @@ class DetailFragment : Fragment() {
                 val barangUrl = it.url
                 if (barangUrl.isNullOrEmpty()) {
                     binding.goToMarketplace.isEnabled = false
-                    binding.goToMarketplace.alpha = 0.5f  // Reduce opacity to show it's disabled
+                    binding.goToMarketplace.alpha = 0.5f
                 } else {
                     binding.goToMarketplace.isEnabled = true
-                    binding.goToMarketplace.alpha = 1f  // Reset opacity
+                    binding.goToMarketplace.alpha = 1f
                     binding.goToMarketplace.setOnClickListener {
                         openMarketPlaceUrl(barangUrl)
                     }
